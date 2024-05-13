@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.leite.DashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="188.0" layoutY="-68.0" prefHeight="132.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="" layoutX="14.0" layoutY="27.0" size="1.2em" />
+                              <Label layoutX="41.0" layoutY="12.0" text="Employee Management System">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="1052.0" layoutY="2.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: red;" textFill="WHITE" />
+                              <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" layoutX="1070.0" layoutY="19.0" size="1.2em" />
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, rgb(5, 65, 66), rgb(22, 21, 55));" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="69.0" layoutY="113.0" text="Welcome," textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="141.0" prefHeight="27.0" prefWidth="169.0" textFill="#219a6a">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Line endX="58.69999694824219" endY="-1.52587890625E-5" layoutX="120.0" layoutY="187.0" startX="-100.0" stroke="WHITE" />
+                        <Button fx:id="home_btn" alignment="TOP_LEFT" layoutX="15.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to bottom right, #3a4368, #525968); -fx-cursor: hand;" text="Home" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.2em" />
+                           </graphic></Button>
+                        <ImageView fitHeight="20.0" fitWidth="24.0" layoutX="145.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="addEmployee_btn" alignment="TOP_LEFT" layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Add Employee" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.2em" />
+                           </graphic></Button>
+                        <Button fx:id="salary_btn" alignment="TOP_LEFT" layoutX="14.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Employee Salary" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.2em" />
+                           </graphic></Button>
+                        <Button fx:id="logout" layoutX="5.0" layoutY="514.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="46.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5EM" />
+                           </graphic></Button>
+                        <Label layoutX="61.0" layoutY="517.0" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="80.0" layoutY="79.0" size="4em" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="171.0" layoutY="146.0" prefHeight="554.4" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="528.0" prefWidth="874.0" style="-fx-background-color: #FFF; -fx-background-radius: 8PX; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);;">
+                                 <children>
+                                    <AnchorPane layoutX="89.0" layoutY="52.0" prefHeight="193.0" prefWidth="874.0" style="-fx-background-color: #FFF; -fx-background-radius: 8PX; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);;" AnchorPane.bottomAnchor="341.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AnchorPane layoutX="303.0" layoutY="-15.0" prefHeight="198.0" prefWidth="874.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane layoutX="590.0" layoutY="19.0" prefHeight="162.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to right, #2b303c, #525968); -fx-background-radius: 5px;">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="MINUS" layoutX="17.0" layoutY="99.0" size="4EM" />
+                                                      <Label layoutX="45.0" layoutY="120.0" text="Total Inactive Employees" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="home_totalInactiveEm" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="211.0" layoutY="13.0" prefHeight="29.0" prefWidth="39.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Arial Black" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="303.0" layoutY="19.0" prefHeight="162.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to right, #2b303c, #525968); -fx-background-radius: 5px;">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="17.0" layoutY="99.0" size="4EM" />
+                                                      <Label layoutX="74.0" layoutY="120.0" text="Total Presents" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="home_totalPresents" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="211.0" layoutY="13.0" prefHeight="29.0" prefWidth="39.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Arial Black" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="16.0" layoutY="19.0" prefHeight="162.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to right, #2b303c, #525968); -fx-background-radius: 5px;">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="22.0" layoutY="98.0" size="4EM" />
+                                                      <Label layoutX="64.0" layoutY="120.0" text="Total Employees" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="home_totalEmployees" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="216.0" layoutY="12.0" prefHeight="29.0" prefWidth="39.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Arial Black" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <BarChart fx:id="home_chart" layoutX="169.0" layoutY="213.0" prefHeight="291.0" prefWidth="535.0" title="Employees Data Chart">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="addEmployee_form" layoutX="34.0" layoutY="68.0" prefHeight="554.4" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="528.0" prefWidth="874.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);">
+                                 <children>
+                                    <AnchorPane prefHeight="281.0" prefWidth="874.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);">
+                                       <children>
+                                          <TableView fx:id="addEmployee_tableView" layoutX="14.0" layoutY="76.0" onMouseClicked="#addEmployeeSelect" prefHeight="192.0" prefWidth="843.0" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #272b3f, #256b51); -fx-border-radius: 8px;" stylesheets="@css/dashboardDesign.css">
+                                            <columns>
+                                              <TableColumn fx:id="addEmployee_col_employeeID" prefWidth="101.59996032714844" text="Employee ID" />
+                                              <TableColumn fx:id="addEmployee_col_firstName" prefWidth="156.0" text="First Name" />
+                                                <TableColumn fx:id="addEmployee_col_lastName" prefWidth="96.79998779296875" text="Last Name" />
+                                                <TableColumn fx:id="addEmployee_col_gender" prefWidth="100.79998779296875" text="Gender" />
+                                                <TableColumn fx:id="addEmployee_col_phoneNum" prefWidth="110.4000244140625" text="Phone #" />
+                                                <TableColumn fx:id="addEmployee_col_position" prefWidth="149.60003662109375" text="Position" />
+                                                <TableColumn fx:id="addEmployee_col_date" prefWidth="135.20001220703125" text="Date Member" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="addEmployee_search" layoutX="14.0" layoutY="13.0" prefHeight="30.0" prefWidth="277.0" promptText="Search" styleClass="search" stylesheets="@css/dashboardDesign.css" />
+                                          <FontAwesomeIcon glyphName="SEARCH" layoutX="23.0" layoutY="34.0" size="1.5em" />
+                                       </children>
+                                    </AnchorPane>
+                                    <TextField fx:id="addEmployee_employeeID" layoutX="131.0" layoutY="315.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="25.0" layoutY="318.0" text="Employee ID:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addEmployee_firstName" layoutX="131.0" layoutY="354.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="38.0" layoutY="357.0" text="First Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addEmployee_lastName" layoutX="131.0" layoutY="391.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="39.0" layoutY="394.0" text="Last Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="62.0" layoutY="431.0" text="Gender:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="addEmployee_gender" layoutX="130.0" layoutY="429.0" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <TextField fx:id="addEmployee_phoneNum" layoutX="424.0" layoutY="315.0" prefHeight="26.0" prefWidth="149.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="348.0" layoutY="318.0" text="Phone #:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="353.0" layoutY="357.0" text="Position:">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="addEmployee_position" layoutX="423.0" layoutY="354.0" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <AnchorPane layoutX="728.0" layoutY="306.0" prefHeight="129.0" prefWidth="102.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);">
+                                       <children>
+                                          <ImageView fx:id="addEmployee_image" fitHeight="139.0" fitWidth="106.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="addEmployee_importBtn" layoutY="114.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: #DDD;" styleClass="import-btn" stylesheets="@css/dashboardDesign.css" text="Import">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="addEmployee_addBtn" layoutX="759.0" layoutY="479.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="34.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@css/dashboardDesign.css" text="Add" />
+                                    <Button fx:id="addEmployee_updateBtn" layoutX="670.0" layoutY="479.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" styleClass="update-btn" stylesheets="@css/dashboardDesign.css" text="Update" />
+                                    <Button fx:id="addEmployee_deleteBtn" layoutX="536.0" layoutY="479.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" styleClass="delete-btn" stylesheets="@css/dashboardDesign.css" text="Delete" />
+                                    <Button fx:id="addEmployee_clearBtn" layoutX="447.0" layoutY="479.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" styleClass="clear-btn" stylesheets="@css/dashboardDesign.css" text="Clear" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="salary_form" layoutX="185.0" layoutY="98.0" prefHeight="554.4" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="24.0" layoutY="14.0" prefHeight="530.0" prefWidth="278.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="34.0" text="Employee ID:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="salary_employeeID" layoutX="104.0" layoutY="32.0" style="-fx-background-color: #FFF;" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Label layoutX="13.0" layoutY="69.0" text="First Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="98.0" text="Last Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="13.0" layoutY="125.0" text="Position:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="salary_firstName" layoutX="104.0" layoutY="69.0" prefHeight="22.0" prefWidth="147.0" styleClass="label-info" stylesheets="@css/dashboardDesign.css">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="salary_lastName" layoutX="104.0" layoutY="98.0" prefHeight="22.0" prefWidth="148.0" styleClass="label-info" stylesheets="@css/dashboardDesign.css">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="salary_position" layoutX="104.0" layoutY="125.0" prefHeight="22.0" prefWidth="146.0" styleClass="label-info" stylesheets="@css/dashboardDesign.css">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="13.0" layoutY="156.0" text="Salary (USD):">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="salary_salary" layoutX="103.0" layoutY="154.0" style="-fx-background-color: #FFF;" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <Button fx:id="salary_updateBtn" layoutX="146.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="95.0" styleClass="update-btn" stylesheets="@css/dashboardDesign.css" text="Update" />
+                                    <Button fx:id="salary_clearBtn" layoutX="32.0" layoutY="228.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="95.0" styleClass="clear-btn" stylesheets="@css/dashboardDesign.css" text="Clear" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="318.0" layoutY="14.0" prefHeight="530.0" prefWidth="569.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);" stylesheets="@css/dashboardDesign.css">
+                                 <children>
+                                    <TableView fx:id="salary_tableView" layoutX="14.0" layoutY="14.0" prefHeight="503.0" prefWidth="541.0">
+                                      <columns>
+                                        <TableColumn fx:id="salary_col_employeeID" prefWidth="106.4000244140625" text="Employee ID" />
+                                        <TableColumn fx:id="salary_col_firstName" prefWidth="104.0" text="First Name" />
+                                          <TableColumn fx:id="salary_col_lastName" prefWidth="95.199951171875" text="Last Name" />
+                                          <TableColumn fx:id="salary_col_position" prefWidth="117.60003662109375" text="Position" />
+                                          <TableColumn fx:id="salary_col_salary" prefWidth="119.2000732421875" text="Salary (USD)" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
