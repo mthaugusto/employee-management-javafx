@@ -2,7 +2,6 @@
 
 ## Projeto em andamento 
 
-## SCREENSHOTS
 ## Screenshots
 ![Screenshot 1](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot1.jpeg)
 ![Screenshot 2](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot2.jpeg)
