@@ -68,4 +68,18 @@ public class EmployeeDao {
 
         }
     }
+
+    public boolean employeeIdExists(String employeeIdString) throws SQLException {
+
+        String query = "SELECT employee_id FROM employee_data WHERE employee_id = ?";
+        try (var connection = getConnection()) {
+            var prepareStatement = connection.prepareStatement(query);
+            prepareStatement.setString(1, employeeIdString);
+            var resultSet = prepareStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+            return false;
+        }
+    }
 }

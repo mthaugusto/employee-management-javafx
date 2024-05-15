@@ -203,7 +203,7 @@
                                           <Font name="Tahoma" size="16.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="addEmployee_gender" layoutX="130.0" layoutY="429.0" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <ComboBox fx:id="addEmployee_gender" layoutX="130.0" layoutY="429.0" onAction="#addEmployeeGenderList" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
                                     <TextField fx:id="addEmployee_phoneNum" layoutX="424.0" layoutY="315.0" prefHeight="26.0" prefWidth="149.0" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
                                     <Label layoutX="348.0" layoutY="318.0" text="Phone #:">
                                        <font>
@@ -215,7 +215,7 @@
                                           <Font name="Tahoma" size="16.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="addEmployee_position" layoutX="423.0" layoutY="354.0" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
+                                    <ComboBox fx:id="addEmployee_position" layoutX="423.0" layoutY="354.0" onAction="#addEmployeePositionList" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@css/dashboardDesign.css" />
                                     <AnchorPane layoutX="728.0" layoutY="306.0" prefHeight="129.0" prefWidth="102.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6,0,0,0);">
                                        <children>
                                           <ImageView fx:id="addEmployee_image" fitHeight="139.0" fitWidth="106.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
