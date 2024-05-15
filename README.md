@@ -1,5 +1,14 @@
 # Employee Management System
 
+## Projeto em andamento 
+
+## SCREENSHOTS
+## Screenshots
+![Screenshot 1](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot1.jpeg)
+![Screenshot 2](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot2.jpeg)
+![Screenshot 1](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot3.jpeg)
+![Screenshot 2](https://github.com/mthaugusto/employee-management-javafx/blob/main/screenshot4.jpeg)
+
 ## Descrição do Projeto
 O Employee Management System é uma aplicação desenvolvida em Java com interface gráfica em JavaFX. Ele oferece uma solução para gerenciar informações de funcionários, incluindo cadastro, visualização e atualização de dados.
 
