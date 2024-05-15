@@ -1,15 +1,17 @@
 package com.matheus.leite;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import com.matheus.leite.data.EmployeeDao;
 import com.matheus.leite.model.Employee;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +29,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class DashboardController {
@@ -179,9 +180,39 @@ public class DashboardController {
 
     private EmployeeDao employeeDao;
 
+    private String[] positionList = { "Marketing Coordinator", "Designer",
+            "Web Developer (Back-end)", "Web Developer (Front-end)" };
+
+    public void addEmployeePositionList() {
+        List<String> listP = new ArrayList<>();
+
+        for (String data : positionList) {
+            listP.add(data);
+        }
+
+        ObservableList listData = FXCollections.observableArrayList(listP);
+        addEmployee_position.setItems(listData);
+    }
+
+    private String[] genderList = { "Male", "Female", "Others" };
+
+    public void addEmployeeGenderList() {
+        List<String> listG = new ArrayList<>();
+
+        for (String data : genderList) {
+            listG.add(data);
+        }
+
+        ObservableList listData = FXCollections.observableArrayList(listG);
+        addEmployee_gender.setItems(listData);
+
+    }
+
     public void initialize() throws SQLException {
         addEmployeeShowListData();
         employeeDao = new EmployeeDao();
+        addEmployeeGenderList();
+        addEmployeePositionList();
     }
 
     public void closeWindow() {
@@ -233,7 +264,29 @@ public class DashboardController {
     // }
     // }
 
-    public void addEmployee() {
+    public void addEmployee() throws SQLException {
+
+        if (addEmployee_firstName.getText().isEmpty()
+                || addEmployee_lastName.getText().isEmpty()
+                || addEmployee_gender.getSelectionModel().getSelectedItem() == null
+                || addEmployee_position.getSelectionModel().getSelectedItem() == null
+                || addEmployee_phoneNum.getText().isEmpty()) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill in all fields!");
+            alert.showAndWait();
+            return;
+        }
+
+        if (employeeDao.employeeIdExists(addEmployee_employeeID.getText())) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Employee ID already exists!");
+            alert.showAndWait();
+            return;
+        }
 
         String firstName = addEmployee_firstName.getText();
         String lastName = addEmployee_lastName.getText();
@@ -248,12 +301,13 @@ public class DashboardController {
             employeeDao.createEmployee(firstName, lastName, gender, phoneNum, position, image, date);
             addEmployeeShowListData();
 
-            // Role para o último item adicionado
+            // Para rolar a scroll bar para o final após adicionar.
             int lastIndex = addEmployee_tableView.getItems().size() - 1;
             addEmployee_tableView.scrollTo(lastIndex);
         } catch (SQLException e) {
-            e.printStackTrace(); // Lide com o erro apropriadamente
+            e.printStackTrace();
         }
+
     }
 
     public void addEmployeeSelect() {
